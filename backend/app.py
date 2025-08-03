@@ -12,7 +12,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Use your frontend domain in prod
+    allow_origins=["https://uke4ia-production.up.railway.app"],  # Use your frontend domain in prod
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -22,12 +22,6 @@ app.include_router(post_router,  prefix="/api")
 app.include_router(member_router, prefix="/api")
 app.include_router(show_router, prefix="/api")
 
-# Mount frontend
+
 app.mount("/", StaticFiles(directory="frontend_dist", html=True), name="frontend")
 app.mount("/images", StaticFiles(directory="./images"), name="images")
-
-@app.get("/{full_path:path}")
-async def catch_all(full_path: str):
-    if full_path.startswith("api") or full_path.startswith("images"):
-        return {"detail": "Not found"}
-    return FileResponse("frontend_dist/index.html")
