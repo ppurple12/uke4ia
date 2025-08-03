@@ -1,4 +1,4 @@
-FROM node:18 AS frontend-build
+FROM node:18 AS frontend-builder
 WORKDIR /app
 COPY frontend/package*.json ./
 RUN npm install
@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY backend/ ./
 
 # Copy built frontend from previous stage to backend static folder
-COPY --from=frontend-build /app/frontend/build ./static
+COPY --from=frontend-builder /app/dist ./frontend_dist
 
 # Expose backend port
 EXPOSE 8000
