@@ -57,7 +57,7 @@
 
 /* Buttons */
 .login-form button {
-  background-color: #5a4864;
+  background-color: #24C1E3;
   color: white;
   border: none;
   padding: 0.8rem;
@@ -69,7 +69,7 @@
 }
 
 .login-form button:hover {
-  background-color: #3c2c47;
+  background-color: #2477E3;
 }
 /* Text + Switch Link */
 .login-form p {
@@ -79,17 +79,6 @@
   font-size: 0.95rem;
 }
 
-/* Toggle sign up/login */
-.link-button {
-  background: none;
-  border: none;
-  color: #5a4864;
-  cursor: pointer;
-  font-weight: bold;
-  margin-left: 0.25rem;
-  font-size: 1rem;
-  padding: 0;
-}
 
 .link-button:hover {
   text-decoration: underline;
