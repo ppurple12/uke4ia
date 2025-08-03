@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from '../../components/AuthContext';
 import '../../styles/concert.css';
@@ -7,7 +7,7 @@ import '../../styles/concert.css';
 export default function ConcertDetails() {
   const { userId, admin } = useAuth();
   const { showId } = useParams();
-
+  const navigate = useNavigate();
   const [concert, setConcert] = useState(null);
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({});
@@ -116,7 +116,8 @@ const availabilityLabels = {
       });
       alert("Availability confirmed!");
       navigate(`/concerts/${showId}`);
-    } catch (error) {
+    }
+     catch (error) {
       console.error("Error confirming availability:", error);
       alert("Failed to confirm. Please try again.");
     }
