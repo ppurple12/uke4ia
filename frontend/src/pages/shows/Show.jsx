@@ -42,22 +42,22 @@ const fetchMembers = async () => {
   }
 };
   useEffect(() => {
+    axios.get(`/api/concerts/${showId}`)
+      .then(res => {
+        setConcert(res.data);
+        setFormData(res.data);
+        setImagePreview(null); // clear preview when concert loads
+        console.log("concert.IMAGE_URL:", res.data.IMAGE_URL)
+      })
+      .catch(err => console.error("Error fetching concert:", err));
+  }, [showId]);
+
+  useEffect(() => {
     if (userId > 0 && concert && new Date(concert.SHOW_DATE) >= today) {
       fetchMembers();
     }
   }, [userId, concert, showId]);
-
-
-  useEffect(() => {
-    if (userId > 0 && concert && new Date(concert.SHOW_DATE) >= today) {
-      setLoadingMembers(true);
-      axios.get(`/api/shows/${showId}/members`)
-        .then(res => setMembers(res.data))
-        .catch(err => console.error("Error fetching members:", err))
-        .finally(() => setLoadingMembers(false));
-    }
-  }, [userId, concert, showId]);
-
+  
   function handleInputChange(e) {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
