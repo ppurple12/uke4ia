@@ -115,7 +115,7 @@ const availabilityLabels = {
         MEMBER_AVAILABILITY: selectedAvailability,
       });
       alert("Availability confirmed!");
-      navigate(`/concerts/${showId}`);
+      fetchMembers();
     }
      catch (error) {
       console.error("Error confirming availability:", error);
