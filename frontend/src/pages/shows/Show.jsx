@@ -29,16 +29,24 @@ const availabilityLabels = {
   YES: "Yes",
   IDK: "I don't know"
 };
+
+const fetchMembers = async () => {
+  setLoadingMembers(true);
+  try {
+    const res = await axios.get(`/api/shows/${showId}/members`);
+    setMembers(res.data);
+  } catch (err) {
+    console.error("Error fetching members:", err);
+  } finally {
+    setLoadingMembers(false);
+  }
+};
   useEffect(() => {
-    axios.get(`/api/concerts/${showId}`)
-      .then(res => {
-        setConcert(res.data);
-        setFormData(res.data);
-        setImagePreview(null); // clear preview when concert loads
-        console.log("concert.IMAGE_URL:", res.data.IMAGE_URL)
-      })
-      .catch(err => console.error("Error fetching concert:", err));
-  }, [showId]);
+    if (userId > 0 && concert && new Date(concert.SHOW_DATE) >= today) {
+      fetchMembers();
+    }
+  }, [userId, concert, showId]);
+
 
   useEffect(() => {
     if (userId > 0 && concert && new Date(concert.SHOW_DATE) >= today) {
