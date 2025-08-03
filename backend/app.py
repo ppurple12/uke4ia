@@ -27,7 +27,11 @@ app.mount("/", StaticFiles(directory="frontend_dist", html=True), name="frontend
 app.mount("/images", StaticFiles(directory="./images"), name="images")
 
 @app.get("/{full_path:path}")
-async def catch_all(full_path: str):
+async def serve_react_app(full_path: str):
     if full_path.startswith("api") or full_path.startswith("images"):
         return {"detail": "Not found"}
     return FileResponse("frontend_dist/index.html")
+
+@app.on_event("startup")
+def check_files():
+    print("INDEX EXISTS?", os.path.exists("frontend_dist/index.html"))
