@@ -1,8 +1,15 @@
 FROM node:18 AS frontend-build
+
 WORKDIR /app/frontend
+
+# Copy package.json and package-lock.json from local uke4ia/frontend/
 COPY frontend/package*.json ./
+
 RUN npm install
-COPY frontend/ ./
+
+# Copy all frontend source files
+COPY frontend/ .
+
 RUN npm run build
 
 # Stage 2: Build backend
