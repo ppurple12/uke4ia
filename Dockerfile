@@ -20,4 +20,4 @@ COPY --from=frontend-builder /app/dist ./frontend_dist
 EXPOSE 8000
 
 # Run backend (make sure your FastAPI app serves /static)
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
