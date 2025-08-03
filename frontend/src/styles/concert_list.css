@@ -1,0 +1,180 @@
+
+/* Each concert item */
+.concert-item {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Hover effect */
+.concert-item:hover {
+  background-color: #e3f2fd;
+  color: #0277bd;
+}
+
+/* Concert name and location grouping */
+.concert-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Concert name */
+.concert-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Concert location */
+.concert-location {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Date styling */
+.concert-date {
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.concert-list {
+
+}
+
+.concert-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.concert-item:hover {
+  background-color: #d8d8d8;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+a:hover {
+  color:#004494
+}
+
+img {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.concert-list.two-per-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.concert-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.concert-image {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: #0056b3;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 0.75rem;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #004494;
+}
+
+.availability-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 2px solid #ccc;
+}
+
+.availability-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.availability-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.availability-button.selected,
+.availability-button:hover {
+  background-color: #e0f0ff;
+  border-color: #007bff;
+}
+
+.availability-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.availability-table th,
+.availability-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.availability-status.yes {
+  color: green;
+}
+
+.availability-status.maybe {
+  color: orange;
+}
+
+.availability-status.no,
+.availability-status.unavailable {
+  color: red;
+}

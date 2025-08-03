@@ -1,0 +1,193 @@
+/* concert.css */
+
+.concert-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #222;
+  text-align: center;
+}
+
+.concert-info {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  line-height: 1.5;
+  color: #444;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.concert-date,
+.concert-location,
+p {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+  color: #555;
+  text-align: center;
+}
+
+.concert-time {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #666;
+  text-align: center;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+/* Container spacing */
+.concert-name input,
+textarea,
+input[type="time"],
+input[type="date"],
+input[type="text"],
+input[type="url"],
+input[type="file"] {
+  width: 100%;
+  max-width: 600px;
+  padding: 8px 12px;
+  margin-top: 4px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Focus states */
+.concert-name input:focus,
+textarea:focus,
+input[type="time"]:focus,
+input[type="date"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="file"]:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 6px rgba(63, 81, 181, 0.3);
+}
+
+/* Labels (h2) spacing */
+h2 {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Textarea height */
+textarea.concert-info {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Image preview */
+img {
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Button styling (for Save/Edit, Login) */
+button {
+  cursor: pointer;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2c3e9e;
+}
+
+/* Availability buttons */
+.availability-button {
+  margin: 0 0.3rem 0.5rem 0;
+  padding: 8px 15px;
+  border: 1.5px solid #3f51b5;
+  border-radius: 4px;
+  background: white;
+  color: #3f51b5;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.availability-button.selected {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.availability-button:hover {
+  background-color: #2c3e9e;
+  color: white;
+}
+
+/* Login button */
+.login-button {
+  background-color: #4caf50;
+}
+
+.login-button:hover {
+  background-color: #3a913e;
+}
+.confirm-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: #0056b3;
+}
+
+.blog-detail-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.blog-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.blog-date {
+  color: gray;
+  margin-bottom: 1.5rem;
+}
+
+.blog-contents {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

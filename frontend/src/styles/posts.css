@@ -1,0 +1,90 @@
+.blog-post-list-container {
+  max-width: 700px;
+  margin: 0 auto; /* center horizontally */
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Each blog post item */
+.blog-post-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.blog-post-item:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Title of the blog post */
+.blog-post-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #222;
+  font-size: 1.4rem;
+}
+
+/* Date text */
+.blog-post-item p.date {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0 0 0.8rem 0;
+  font-style: italic;
+}
+
+/* Preview content */
+.blog-post-item p.preview {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Pagination container */
+.pagination-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Buttons for pagination */
+.pagination-container button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.pagination-container button:disabled {
+  background-color: #cccccc;
+  cursor: default;
+}
+
+.pagination-container button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Page indicator text */
+.pagination-container span {
+  font-size: 1rem;
+  color: #333;
+  user-select: none;
+}
+
+.header-bar {
+  display: flex;
+  justify-content: flex-end; /* pushes content to right */
+  margin-bottom: 1rem;
+}
