@@ -26,15 +26,12 @@ app.include_router(show_router, prefix="/api")
 app.mount("/", StaticFiles(directory="frontend_dist", html=True), name="frontend")
 app.mount("/images", StaticFiles(directory="./images"), name="images")
 
-from fastapi.responses import HTMLResponse
-
 @app.get("/{full_path:path}")
-async def catch_all(full_path: str):
+async def catch_all(full_path: str, request: Request):
+    # Ignore API and image routes — let other routers handle those
     if full_path.startswith("api") or full_path.startswith("images"):
         return {"detail": "Not found"}
+
+    # Return index.html for any other path (SPA routing)
     index_path = os.path.join("frontend_dist", "index.html")
-    if os.path.exists(index_path):
-        with open(index_path, "r") as f:
-            return HTMLResponse(content=f.read(), status_code=200)
-    else:
-        return {"detail": "Index file not found"}
+    return FileResponse(index_path)
