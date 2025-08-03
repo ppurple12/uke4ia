@@ -256,8 +256,11 @@ button:hover {
     max-width: 95%;
   }
   .availability-section h3 {
-    text-align: center;
-    margin-bottom: 1rem;
+   display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* allows stacking on small screens */
+    gap: 0.5rem;
   }
 
   .availability-controls {
@@ -292,7 +295,7 @@ button:hover {
     height: 36px;
     font-size: 0.9rem;
   }
-  
+
   @media (max-width: 600px) {
     .availability-controls {
       flex-direction: column;
