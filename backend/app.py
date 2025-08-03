@@ -27,12 +27,7 @@ app.mount("/", StaticFiles(directory="frontend_dist", html=True), name="frontend
 app.mount("/images", StaticFiles(directory="./images"), name="images")
 
 @app.get("/{full_path:path}")
-def serve_react_app(request: Request, full_path: str):
-    # If it's an API call, return 404 (we don't want to serve index.html for API errors)
+async def catch_all(full_path: str):
     if full_path.startswith("api") or full_path.startswith("images"):
         return {"detail": "Not found"}
-    
-    index_path = os.path.join("frontend_dist", "index.html")
-    if os.path.exists(index_path):
-        return FileResponse(index_path)
-    return {"detail": "index.html not found"}
+    return FileResponse("frontend_dist/index.html")
