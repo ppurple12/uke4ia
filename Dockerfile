@@ -1,6 +1,6 @@
 FROM node:18 AS frontend-build
 
-WORKDIR /app/frontend
+WORKDIR /app
 
 COPY frontend/package*.json ./
 RUN npm install
