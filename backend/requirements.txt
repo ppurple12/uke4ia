@@ -5,3 +5,4 @@ psycopg2-binary
 python-dotenv
 requests
 protobuf==6.31.1
+python-multipart
