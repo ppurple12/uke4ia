@@ -151,11 +151,11 @@ button:hover {
 
 /* Login button */
 .login-button {
-  background-color: #4caf50;
+  background-color: #24C1E3;
 }
 
 .login-button:hover {
-  background-color: #3a913e;
+  background-color: #2477E3;
 }
 .confirm-button {
   background-color: #007bff;
@@ -254,5 +254,60 @@ button:hover {
 
   img {
     max-width: 95%;
+  }
+  .availability-section h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .availability-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .availability-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  /* Reduce padding and allow buttons to wrap nicely */
+  .availability-button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    flex: 1 1 auto;
+    max-width: 120px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Confirm button sizing for consistency */
+  .confirm-button {
+    padding: 8px 16px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 600px) {
+    .availability-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .availability-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .availability-button,
+    .confirm-button {
+      width: 100%;
+      max-width: none;
+    }
   }
 }

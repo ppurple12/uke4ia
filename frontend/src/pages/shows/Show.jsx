@@ -115,7 +115,7 @@ const availabilityLabels = {
         MEMBER_AVAILABILITY: selectedAvailability,
       });
       alert("Availability confirmed!");
-      window.location.reload()
+      navigate(`/concerts/${showId}`);
     } catch (error) {
       console.error("Error confirming availability:", error);
       alert("Failed to confirm. Please try again.");
@@ -282,30 +282,25 @@ const availabilityLabels = {
     </div>
       {isFutureOrToday && (
         userId > 0 ? (
-          <div className="availability-section" style={{ marginTop: "2rem" }}>
+          <div className="availability-section">
             <h3>Set your availability for this event:</h3>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div className="availability-buttons" style={{ display: "flex", gap: "0.5rem" }}>
+            <div className="availability-controls">
+              <div className="availability-buttons">
                 {availabilityOptions.map(({ label, value }) => (
                   <button
-                    key={label} // use enum value as key
+                    key={label}
                     className={`availability-button ${selectedAvailability === value ? "selected" : ""}`}
-                    onClick={() => handleSetAvailability(value)} // pass enum value internally
-                    style={{ height: "36px" }}
+                    onClick={() => handleSetAvailability(value)}
                   >
-                    {label} {/* display label */}
+                    {label}
                   </button>
                 ))}
               </div>
-              
-              <button
-                className="confirm-button"
-                onClick={handleConfirmAvailability}
-                style={{ height: "36px" }} // Match availability buttons height
-              >
+              <button onClick={handleConfirmAvailability} className="confirm-button">
                 Confirm
               </button>
             </div>
+
 
             {loadingMembers && <p>Loading members...</p>}
             {!loadingMembers && members.length === 0 && <p>No members found.</p>}
