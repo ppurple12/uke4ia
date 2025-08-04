@@ -18,7 +18,7 @@ const PastConcertsPage = () => {
 
 return (
   <div>
-    <h2>Past Concerts</h2>
+    <h2>Past Performances</h2>
     {concerts.length === 0 && <p>No past concerts found.</p>}
     <div className="concert-list two-per-row">
       {concerts.map((concert) => (

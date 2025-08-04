@@ -17,7 +17,7 @@ export default function UpcomingShows({ userId }) {
 
   return (
     <div>
-      <h2>Upcoming Concerts</h2>
+      <h2>Upcoming Performances</h2>
       <div className="concert-list">
         {concerts.map((concert) => (
           <Link to={`/concerts/${concert.SHOW_ID}`} key={concert.SHOW_ID} className="concert-item">

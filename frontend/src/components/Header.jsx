@@ -46,8 +46,8 @@ function Header() {
           {menuOpen && (
             <div className="dropdown-menu">
               <nav className="dropdown-links">
-                <Link to="/upcoming_concerts" className="nav-link" onClick={() => setMenuOpen(false)}>Upcoming Shows</Link>
-                <Link to="/past_concerts" className="nav-link" onClick={() => setMenuOpen(false)}>View Past Shows</Link>
+                <Link to="/upcoming_concerts" className="nav-link" onClick={() => setMenuOpen(false)}>Upcoming Performances</Link>
+                <Link to="/past_concerts" className="nav-link" onClick={() => setMenuOpen(false)}>View Past Performances</Link>
                 {admin && (
                   <Link to="/view_members" className="nav-link" onClick={() => setMenuOpen(false)}>View Members</Link>
                 )}
